@@ -77,23 +77,23 @@ function App() {
 
   return (
     <div className="App">
-      <div style={{ position: "relative", height: "800px", width: "700px" }}>
+      <div className="chat-container">
         <MainContainer>
-          <ChatContainer>
-            <MessageList 
-              scrollBehavior="smooth" 
-              typingIndicator={isTyping ? <TypingIndicator content="ChatGPT (private for Sergey only) is typing..." /> : null}
-            >
-              {messages.map((msg, i) => (
-                <Message key={i} model={{ 
-                  message: msg.message, 
-                  sender: msg.sender, 
-                  direction: msg.direction
-                }} />
-              ))}
-            </MessageList>
-            <MessageInput placeholder="Type your message here..." onSend={handleSend} />        
-          </ChatContainer>
+        <ChatContainer>
+  <MessageList 
+    scrollBehavior="smooth" 
+    typingIndicator={isTyping ? <TypingIndicator content="ChatGPT is typing..." /> : null}
+  >
+    {messages.map((msg, i) => (
+      <Message key={i} model={{ 
+        message: msg.message, 
+        sender: msg.sender, 
+        direction: msg.direction
+      }} />
+    ))}
+  </MessageList>
+  <MessageInput placeholder="Type your message here..." onSend={handleSend} />        
+</ChatContainer>
         </MainContainer>
       </div>
     </div>
