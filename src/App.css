@@ -1,18 +1,27 @@
 #root {
   max-width: 100%;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 0.5rem;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #242424;
 }
 
 .chat-container {
   width: 100%;
   max-width: 700px;
-  height: 90vh; /* Уменьшаем высоту, чтобы инпут был всегда виден */
+  height: 80vh;
   display: flex;
   flex-direction: column;
   border-radius: 12px;
@@ -21,16 +30,9 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.input-container {
-  width: 100%;
-  background: #1a1a1a;
-  padding: 10px;
-  position: relative; /* Убираем sticky, чтобы не ломался */
-}
-
 @media screen and (max-width: 768px) {
   .chat-container {
     width: 95%;
-    height: 85vh;
+    height: 75vh;
   }
 }
